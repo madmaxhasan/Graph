@@ -39,7 +39,7 @@ int main()
     {
         int x,y;
         cin >> x >> y;
-        Graph[x].pb(y), Graph[y].pb(x);
+        Graph[x].pb(y);
     }
     int numCC = 0;
     for(int i=0; i<node; i++)
