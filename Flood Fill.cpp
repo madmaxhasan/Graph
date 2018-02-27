@@ -5,8 +5,8 @@ using namespace std;
 vector <string> grid;
 
 int N, M;
-int X[] = {  1,  1,  0, -1, -1, -1,  0,  1  };  // S. SE, E, NE, N, NW, W, SW
-int Y[] = {  0,  1,  1,  1,  0, -1, -1, -1  };  // S. SE, E, NE, N, NW, W, SW
+int X[] = {  1,  1,  0, -1, -1, -1,  0,  1  };  // S, SE, E, NE, N, NW, W, SW
+int Y[] = {  0,  1,  1,  1,  0, -1, -1, -1  };  // S, SE, E, NE, N, NW, W, SW
 
 void printGrid()
 {
