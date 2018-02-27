@@ -12,7 +12,8 @@ void DFS(int u)
     cout << u << " ";
     for(int i=0; i<Graph[u].size(); i++)
     {
-        if(visited[Graph[u][i]] == false)DFS(Graph[u][i]);
+        int v = Graph[u][i];
+        if(visited[v] == false)DFS(v);
     }
 }
 
