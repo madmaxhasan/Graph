@@ -34,6 +34,7 @@ int drY[] = {0, 1, 1, 1, 0, -1, -1, -1};
 vector <vi> Graph;
 vi dfs_num, dfs_low, dfs_parent, articulation_vertex;
 int dfsNumberCounter, dfsRoot, rootChildren;
+int counterArray[100];
 
 void articulationPointAndBridge(int u)
 {
@@ -48,7 +49,10 @@ void articulationPointAndBridge(int u)
 				rootChildren++;
 			articulationPointAndBridge(v);
 			if(dfs_low[v] >= dfs_num[u])
+			{
 				articulation_vertex[u] = true;
+				counterArray[u]++;
+			}
 			if(dfs_low[v] > dfs_num[u])
 				printf(" Edge (%d, %d) is a bridge\n", u, v);
 			dfs_low[u] = min(dfs_low[u], dfs_low[v]);
@@ -68,6 +72,7 @@ int main()
 	int V, E, total_neighbors, x, y;
 	scanf("%d %d",&V,&E);
 	Graph.assign(V, vi());
+	Fill(counterArray, 0);
 	REP(i, E)
 	{
 		scanf("%d %d", &x, &y);
@@ -94,5 +99,7 @@ int main()
 	for(int i=0; i<V; i++)
 		if(articulation_vertex[i])
 			printf(" Vertex %d\n", i);
+	REP(i, V)cout << counterArray[i] << " ";
+	printf("\n");
 	return 0;
 }
